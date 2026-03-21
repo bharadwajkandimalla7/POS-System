@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>View Products</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    background: lightgreen;
+
+.container{
+    width:85%;
+    margin:auto;
+    margin-top:50px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+th{
+    background:#2c7be5;
+    color:white;
+    padding:12px;
+}
+
+td{
+    padding:10px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+    background:#f1f4f8;
+}
+
+.update{
+    background:#28a745;
+    color:white;
+    padding:6px 12px;
+    text-decoration:none;
+    border-radius:4px;
+}
+
+.delete{
+    background:#dc3545;
+    color:white;
+    padding:6px 12px;
+    text-decoration:none;
+    border-radius:4px;
+}
+
+.update:hover{
+    background:#218838;
+}
+
+.delete:hover{
+    background:#c82333;
+}
+
+.back{
+    display:block;
+    margin-top:20px;
+    text-align:center;
+    text-decoration:none;
+    color:#333;
+    font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>All Products</h1>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>BarCode</th>
+<th>Category</th>
+<th>Price</th>
+<th>Quantity</th>
+<th>Actions</th>
+</tr>
+
+{% for p in products %}
+
+<tr>
+<td>{{p.product_id}}</td>
+<td>{{p.Name}}</td>
+<td>{{p.BarCode}}</td>
+<td>{{p.category}}</td>
+<td>{{p.Price}}</td>
+<td>{{p.Quantity}}</td>
+
+<td>
+<a class="update" href="/update_product/{{p.product_id}}">Update</a>
+<a class="delete" href="/delete_product/{{p.product_id}}">Delete</a>
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<a class="back" href="/">⬅ Back to Menu</a>
+
+</div>
+
+</body>
+</html>

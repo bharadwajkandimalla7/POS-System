@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Product Menu</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    background: lightgreen; /* soft, light green */
+    <img src="IMG1.jpg" alt="Floating Image"
+     style="width:50px; height:50px; position:absolute; top:200px; left:100px;">
+}
+
+.menu-container{
+    width:400px;
+    margin:auto;
+    margin-top:120px;
+    text-align:center;
+    background:white;
+    padding:40px;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+h1{
+    margin-bottom:30px;
+}
+
+a{
+    display:block;
+    margin:15px;
+    padding:12px;
+    background:#2c7be5;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+}
+
+a:hover{
+    background:#1a5fd1;
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+<div class="menu-container">
+    <img src="{{ url_for('static', filename='img.png') }}"
+     style="width:50px; height:50px; position:absolute; top:140px; left:550px;">
+    <img src="{{ url_for('static', filename='img_1.png') }}"
+     style="width:50px; height:50px; position:absolute; top:130px; left:740px;">
+    <img src="{{ url_for('static', filename='img.png') }}"
+     style="width:50px; height:50px; position:absolute; top:140px; left:930px;">
+    <h2>Product Management Menu</h2>
+    <a href="/add_product">Add Product</a>
+    <a href="/view_products">View Products</a>
+</div>
+
+</body>
+
+</html>
